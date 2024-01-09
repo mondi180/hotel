@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FrontDesk Hotel</title>
+  <style>
+    /* Style for the buttons */
+    .color-button {
+      padding: 15px;
+      margin-left: 30px;
+      cursor: pointer;
+      background-color: green; /* Initial color */
+    }
+
+    /* Change color when button is active (clicked) */
+    .color-button.active-1 {
+      background-color: red;
+    }
+    .color-button.active-2 {
+      background-color: lightblue; /* Hover color */
+    }
+  </style>
+</head>
+<body>
+  <h1>City-Rooms Prishtina</h1>
+  <hr>
+<h2>Kati 1</h2>
+<hr>
+<br>
+<!-- Buttons with active and hover effects -->
+<button class="color-button" onclick="toggleColor(this)">102</button>
+<button class="color-button" onclick="toggleColor(this)">104</button>
+<hr>
+<br>
+<br>
+<br>
+<hr>
+<button class="color-button" onclick="toggleColor(this)">101</button>
+<button class="color-button" onclick="toggleColor(this)">103</button>
+<button class="color-button" onclick="toggleColor(this)">105</button>
+<button class="color-button" onclick="toggleColor(this)">106</button>
+<button class="color-button" onclick="toggleColor(this)">107</button>
+<button class="color-button" onclick="toggleColor(this)">108</button>
+<button class="color-button" onclick="toggleColor(this)">109</button>
+<hr>
+<br>
+<br>
+<h2>Kati 2</h2>
+<hr>
+<br>
+<button class="color-button" onclick="toggleColor(this)">201</button>
+<button class="color-button" onclick="toggleColor(this)">202</button>
+<button class="color-button" onclick="toggleColor(this)">204</button>
+<button class="color-button" onclick="toggleColor(this)">206</button>
+<button class="color-button" onclick="toggleColor(this)">211</button>
+<hr>
+<br>
+<br>
+<hr>
+<button class="color-button" onclick="toggleColor(this)">203</button>
+<button class="color-button" onclick="toggleColor(this)">205</button>
+<button class="color-button" onclick="toggleColor(this)">207</button>
+<button class="color-button" onclick="toggleColor(this)">208</button>
+<button class="color-button" onclick="toggleColor(this)">209</button>
+<button class="color-button" onclick="toggleColor(this)">210</button>
+<hr>
+<br>
+<br>
+<h1>Kati 3</h1>
+<h4>Double Rooms</h4>
+<hr>
+<br>
+<button class="color-button" onclick="toggleColor(this)">302</button>
+<button class="color-button" onclick="toggleColor(this)">304</button>
+<script>
+  function toggleColor(button) {
+    // Check the current state of the button
+    if (button.classList.contains('active-1')) {
+      // If it's in state 1, toggle to state 2
+      button.classList.remove('active-1');
+      button.classList.add('active-2');
+    } else if (button.classList.contains('active-2')) {
+      // If it's in state 2, toggle to state 3
+      button.classList.remove('active-2');
+      button.classList.add('active-3');
+    } else {
+      // If it's in any other state (or not toggled), toggle to state 1
+      button.classList.remove('active-3');
+      button.classList.add('active-1');
+    }
+  }
+</script>
+<hr>
+<br>
+<br>
+<h5>Do not close or refresh he page. The colors will revert back to green if you do</h5>
+</body>
+</html>
