@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FrontDesk Hotel</title>
+  <style>
+    /* Style for the buttons */
+    .color-button {
+      padding: 15px;
+      margin-left: 30px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <h1>City-Rooms Prishtina</h1>
+  <hr>
+  <h2>Kati 1</h2>
+  <hr>
+  <br>
+  <!-- Buttons with active and hover effects -->
+  <button id="button102" class="color-button" onclick="toggleColor('button102')">102</button>
+  <button id="button104" class="color-button" onclick="toggleColor('button104')">104</button>
+  <hr>
+  <br>
+  <br>
+  <br>
+  <hr>
+  <button id="button101" class="color-button" onclick="toggleColor('button101')">101</button>
+  <button id="button103" class="color-button" onclick="toggleColor('button103')">103</button>
+  <button id="button105" class="color-button" onclick="toggleColor('button105')">105</button>
+  <button id="button106" class="color-button" onclick="toggleColor('button106')">106</button>
+  <button id="button107" class="color-button" onclick="toggleColor('button107')">107</button>
+  <button id="button108" class="color-button" onclick="toggleColor('button108')">108</button>
+  <button id="button109" class="color-button" onclick="toggleColor('button109')">109</button>
+  <hr>
+  <br>
+  <br>
+  <h2>Kati 2</h2>
+  <hr>
+  <br>
+  <button id="button201" class="color-button" onclick="toggleColor('button201')">201</button>
+  <button id="button202" class="color-button" onclick="toggleColor('button202')">202</button>
+  <button id="button204" class="color-button" onclick="toggleColor('button204')">204</button>
+  <button id="button206" class="color-button" onclick="toggleColor('button206')">206</button>
+  <button id="button211" class="color-button" onclick="toggleColor('button211')">211</button>
+  <hr>
+  <br>
+  <br>
+  <hr>
+  <button id="button203" class="color-button" onclick="toggleColor('button203')">203</button>
+  <button id="button205" class="color-button" onclick="toggleColor('button205')">205</button>
+  <button id="button207" class="color-button" onclick="toggleColor('button207')">207</button>
+  <button id="button208" class="color-button" onclick="toggleColor('button208')">208</button>
+  <button id="button209" class="color-button" onclick="toggleColor('button209')">209</button>
+  <button id="button210" class="color-button" onclick="toggleColor('button210')">210</button>
+  <hr>
+  <br>
+  <br>
+  <h1>Kati 3</h1>
+  <h4>Double Rooms</h4>
+  <hr>
+  <br>
+  <button id="button302" class="color-button" onclick="toggleColor('button302')">302</button>
+  <button id="button304" class="color-button" onclick="toggleColor('button304')">304</button>
+  <script>
+    function toggleColor(buttonId) {
+      const button = document.getElementById(buttonId);
+      let currentState = parseInt(localStorage.getItem(buttonId), 10);
+
+      if (isNaN(currentState)) {
+        currentState = 0; // Default state if not present in localStorage
+        localStorage.setItem(buttonId, currentState);
+      }
+
+      const nextState = (currentState + 1) % 3;
+      button.style.backgroundColor = nextState === 0 ? 'green' : (nextState === 1 ? 'red' : 'lightblue');
+      localStorage.setItem(buttonId, nextState);
+    }
+
+    // Restore button states from localStorage on page load
+    document.addEventListener('DOMContentLoaded', function () {
+      const buttons = document.querySelectorAll('.color-button');
+
+      buttons.forEach((button) => {
+        const buttonId = button.id;
+        let currentState = parseInt(localStorage.getItem(buttonId), 10);
+
+        if (isNaN(currentState)) {
+          currentState = 0; // Default state if not present in localStorage
+          localStorage.setItem(buttonId, currentState);
+        }
+
+        button.style.backgroundColor = currentState === 0 ? 'green' : (currentState === 1 ? 'red' : 'lightblue');
+      });
+    });
+  </script>
+  <hr>
+  <br>
+  <br>
+</body>
+</html>
